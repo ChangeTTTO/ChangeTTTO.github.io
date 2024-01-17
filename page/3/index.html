@@ -54,7 +54,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-01-10 15:05:19'
+  postUpdate: '2024-01-18 05:51:51'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -151,63 +151,237 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://i.pinimg.com/originals/bf/da/38/bfda380e49cf7b40513372ff07985c20.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Rxbby"><span class="site-name">Rxbby</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Rxbby</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/09/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="算法之二分查找">算法之二分查找</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-09T00:06:39.000Z" title="发表于 2023-11-09 08:06:39">2023-11-09</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">二分查找需求： 在有序数组内，查找一个target值
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://i.pinimg.com/originals/bf/da/38/bfda380e49cf7b40513372ff07985c20.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Rxbby"><span class="site-name">Rxbby</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Rxbby</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/25/jetpack/" title="Android_Java_Version">Android_Java_Version</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-25T08:04:01.000Z" title="发表于 2023-11-25 16:04:01">2023-11-25</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Android/">Android</a></span></div><div class="content">Android_Java_Version
+一些有用但不知道放哪个位置的知识补充1.将需要用到的图片拖入drawable
+2.因为用到数据绑定所以添加依赖
+1234567891011android &#123;        ...     buildFeatures &#123;        dataBinding =true    &#125;    &#125;dependencies &#123;   ... ... ...   implementation(platform(&quot;org.jetbrains.kotlin:kotlin-bom:1.8.0&quot;))//这一段代码   ... ... ...&#125; 
 
-如果找到了返回对应的索引。
-如果没找到返回-1。
+3.因为要在v-model中暂时保存数据，所以添加viewmodel-savedstat依赖
+1implementation (&quot;androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1&quot;)
 
+4.将Fragments的布局全部改为constraintlayout
+5.%d ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/20/Kotlin/" title="Kotlin">Kotlin</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-20T06:10:58.000Z" title="发表于 2023-11-20 14:10:58">2023-11-20</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/kotlin/">kotlin</a></span></div><div class="content">强类型语言，一旦被推导出来就不能被改变
+hello,world1234// Kotlin Hello World Programfun main(args: Array&lt;String&gt;) &#123;    println(&quot;Hello, World!&quot;)&#125;
 
+**Line #2: ** 第二行定义主函数
+1fun main(args: Array&lt;String&gt;) 
 
+main() 函数是每个程序的入口点。 kotlin 中的所有函数都以 fun 关键字开头，后跟函数名称（这里 main 是函数名）、参数列表、可选返回类型和函数体（ { ……. } ）。 在这种情况下，主函数包含参数 - 字符串数组和返回单位。 Unit类型对应java中的void，表示该函数不返回任何值。
+args：这是一个变量名，用于引用传递给 main 函数的命令行参数。
+Array&lt;String&gt;：这是一个类型标注，表示 args 是一个 String 类型的数组。
 
+Line #3:  第三行是一条语句，它打印“Hello, World!”打 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/20/Frame/" title="Frame">Frame</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-20T03:58:03.000Z" title="发表于 2023-11-20 11:58:03">2023-11-20</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="content">Maven基本介绍Mvn介绍Maven：本质是一个项目管理工具，将项目开发和管理过程抽象成一个项目对象模型（POM）
+POM：Project Object Model 项目对象模型。Maven 是用 Java 语言编写的，管理的东西以面向对象的形式进行设计，最终把一个项目看成一个对象，这个对象叫做 POM
+pom.xml：Maven 需要一个  pom.xml 文件，Maven 通过加载这个配置文件可以知道项目的相关信息，这个文件代表就一个项目。如果做 8 个项目，对应的是 8 个 pom.xml 文件
+依赖管理：Maven 对项目所有依赖资源的一种管理，它和项目之间是一种双向关系，即做项目时可以管理所需要的其他资源，当其他项目需要依赖我们项目时，Maven 也会把我们的项目当作一种资源去进行管理。
+管理资源的存储位置：本地仓库，私服，中央仓库
 
+基本作用：
 
+项目构建：提供标准的，跨平台的自动化构建项目的方式
 
+依赖管理：方便快捷的管理项目依赖的资源（jar 包），避免资源间的版本冲突等问题
 
-思路
-
-
-
-
-1
-设置两个指针low和high, low&#x3D;0,high&#x3D;arr.length-1，分别指向第一个索引和最后一个索引.
-
-
-2
-low会向右移动，high会像左移动一起查找元素，如果找到了元素，程序结束。如果没有找到，当low&gt;high时，程序结束，返回-1.
-
-
-3
-如何查找？设置一个中间索引mid&#x3D;low+high&#x2F;2，此时得考虑一个取整问题，7&#x2F;2&#x3D;3.5向下取整为3，将索引为mid的值与target进行一个比较.
-
-
-4
-如果mid&gt;target的值，设置high&#x3D; mid -1.     左目标中间右    既然中间值都大于目标值了，那么中间值包括右边的所有值都不用比较了。右边的全部进行向左移动。
-
-
-5
-如果mid&lt;targer的值，设置low&#x3D; mid + 1.      左中目标右     既然中间值都小于目标值了，那么中间值包括左边的所有 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">数据结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-09T00:06:39.000Z" title="发表于 2023-11-09 08:06:39">2023-11-09</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">数组扩容机制:在原本容量cap只有10的情况下，我们向数组里面添加11个元素，此时Size&gt;cap，则会触发扩容机制。
-
-以一定的规则创建出一个新的容量&gt;cap的新数组。
-将原数组数据按原来的位置复制到新数组中去。
-最后再将之前放不下的元素塞到新数组中去。
+统一开发结构：提供标准的，统一的项目开发结构
 
 
-Size: 数组内元素个数
-Cap: 数组最大实际容量
 
-addLast方法
-向数组的元素尾部添加元素addLast方法。
-思路：将我们要添加的元素作为参数传递到方法之中，并将该元素赋值给array[Size],每成功完成一次赋值Size++
+各目录存放资源类型说明：
 
-123456789101112131415public class DynamicArray &#123; private int Size=0; //数组内元素个数 private int capcity=10;  //数组的最大实际容量 private int[] array=new int[capcity]; //定义一个数组  /**  * 向数组的元素末尾添加元素  * 参数为要添加的元素  * @param element  */ public void addL ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/08/hello-world/" title="Hello">Hello</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-08T11:00:37.287Z" title="发表于 2023-11-08 19:00:37">2023-11-08</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">hello，从今天起我要准备写博客了，我会将以前做过的笔记再好好整理一下给放到这个网站上来，也会将那些可能会帮助到别人的知识认认真真的一字一字的将它给记录下来并分享（虽然不会有什么人看）慢慢的成为自己的一个庞大知识库，这件事也许会对我造成一种积极的影响，让我对于学习会变得更加的认真。OK今天就写到这了。
-</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pn</div><div class="author-info__description">不努力，枉年轻！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ChangeTTTO?tab=repositories"><i class="fab fa-github"></i><span>代码仓库</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">写写笔记和日常</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/10/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AASDK/" title="如何开发一个SDK">如何开发一个SDK</a><time datetime="2024-01-10T00:06:39.000Z" title="发表于 2024-01-10 08:06:39">2024-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/08/MQ/" title="无题">无题</a><time datetime="2024-01-08T11:13:51.932Z" title="发表于 2024-01-08 19:13:51">2024-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/07/%E5%A4%A9%E6%9C%BA%E5%AD%A6%E5%A0%82/" title="无题">无题</a><time datetime="2024-01-07T10:24:16.671Z" title="发表于 2024-01-07 18:24:16">2024-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/07/%E9%9D%A2%E8%AF%95%E8%A6%81%E7%82%B9/" title="无题">无题</a><time datetime="2024-01-07T08:00:10.242Z" title="发表于 2024-01-07 16:00:10">2024-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/09/andriod%E5%AE%9E%E7%8E%B0/" title="无题">无题</a><time datetime="2023-12-08T20:14:12.758Z" title="发表于 2023-12-09 04:14:12">2023-12-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            
-            </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android/"><span class="card-category-list-name">Android</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.37em; color: #99a4b2">算法</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">学习笔记</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">设计模式</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 1.1em; color: #999">随笔</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/java/" style="font-size: 1.23em; color: #999ea6">java</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">18</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">23</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-11-07T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-01-10T07:05:17.018Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Pn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer" data-id="1336871887" data-server="netease" data-type="song"  data-fixed="true" data-theme="#3F51B5" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+src&# ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/20/SSM/" title="SSM框架">SSM框架</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-20T03:58:03.000Z" title="发表于 2023-11-20 11:58:03">2023-11-20</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="content">MyBatis基本介绍ORM（Object Relational Mapping）： 对象关系映射，指的是持久化数据和实体对象的映射模式，解决面向对象与关系型数据库存在的互不匹配的现象
+
+MyBatis：
+
+MyBatis 是一个优秀的基于 Java 的持久层框架，它内部封装了 JDBC，使开发者只需关注 SQL 语句本身，而不需要花费精力去处理加载驱动、创建连接、创建 Statement 等过程。
+
+MyBatis 通过 XML 或注解的方式将要执行的各种 Statement 配置起来，并通过 Java 对象和 Statement 中 SQL 的动态参数进行映射生成最终执行的 SQL 语句。
+
+MyBatis 框架执行 SQL 并将结果映射为 Java 对象并返回。采用 ORM 思想解决了实体和数据库映射的问题，对 JDBC 进行了封装，屏蔽了 JDBC 底层 API 的调用细节，使我们不用操作 JDBC API，就可以完成对数据库的持久化操作。
+
+
+MyBatis 官网地址：http://www.mybatis.org/mybatis-3/
+参考视频：https://space.b ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/20/DB/" title="数据库">数据库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-20T03:58:03.000Z" title="发表于 2023-11-20 11:58:03">2023-11-20</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="content">MySQL简介数据库数据库：DataBase，简称 DB，存储和管理数据的仓库
+数据库的优势：
+
+可以持久化存储数据
+方便存储和管理数据
+使用了统一的方式操作数据库 SQL
+
+数据库、数据表、数据的关系介绍：
+
+数据库
+
+用于存储和管理数据的仓库
+一个库中可以包含多个数据表
+
+
+数据表
+
+数据库最重要的组成部分之一
+由纵向的列和横向的行组成（类似 excel 表格）
+可以指定列名、数据类型、约束等
+一个表中可以存储多条数据
+
+
+数据：想要永久化存储的数据
+
+
+参考视频：https://www.bilibili.com/video/BV1zJ411M7TB
+参考专栏：https://time.geekbang.org/column/intro/139
+参考书籍：https://book.douban.com/subject/35231266/
+
+MySQLMySQL 数据库是一个最流行的关系型数据库管理系统之一，关系型数据库是将数据保存在不同的数据表中，而且表与表之间可以有关联关系，提高了灵活性
+缺点：数据存储在磁盘中，导致读写性能差，而且数据关系复杂，扩展性差
+MySQL 所使用的 S ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/20/java/" title="java">java</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-20T03:46:54.000Z" title="发表于 2023-11-20 11:46:54">2023-11-20</time></span></div><div class="content">SE基础数据变量类型
+
+
+
+成员变量
+局部变量
+静态变量
+
+
+
+定义位置
+在类中，方法外
+方法中或者方法的形参
+在类中，方法外
+
+
+初始化值
+有默认初始化值
+无，赋值后才能使用
+有默认初始化值
+
+
+调用方法
+对象调用
+
+对象调用，类名调用
+
+
+存储位置
+堆中
+栈中
+方法区（JDK8 以后移到堆中）
+
+
+生命周期
+与对象共存亡
+与方法共存亡
+与类共存亡
+
+
+别名
+实例变量
+
+类变量，静态成员变量
+
+
+静态变量只有一个，成员变量是类中的变量，局部变量是方法中的变量
+
+数据类型基本类型Java 语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型
+byte：
+
+byte 数据类型是 8 位、有符号的，以二进制补码表示的整数，8 位一个字节，首位是符号位
+最小值是 -128（-2^7）、最大值是 127（2^7-1）
+默认值是 0
+byte 类型用在大型数组中节约空间，主要代替整数，byte 变量占用的空间只有 int 类型的四分之一
+例子：byte a = 100，byte b = -50
+
+short：
+
+short 数据类型是 16 位、有符号的以 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/15/vue3-ts%E5%9F%BA%E7%A1%80/" title="vue3+ts基础">vue3+ts基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-15T08:04:46.000Z" title="发表于 2023-11-15 16:04:46">2023-11-15</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="content">Vue 31. TypeScript1) 动态类型的问题js 属于动态类型语言，例如
+12function test(obj) &#123;    &#125;
+
+obj 可能只是个字符串
+1test(&#x27;hello, world&#x27;)
+
+obj 也有可能是个函数
+1test(()=&gt;console.log(&#x27;hello, world&#x27;))
+
+obj 类型不确定，就给后期使用者带来了麻烦，一旦参数传不对，代码就崩溃了
+动态类型意味着
+
+运行代码时才知道发生什么 (running the code to see what happens)
+
+静态类型意味着
+
+在代码运行前，就对它的行为做出预测 (make predications about what code is expected before it runs)
+
+下面的 typescript 代码，就在代码运行前对参数加入了约束限制
+12function test(msg : string) &#123;&#125;
+
+
+限制了参数只能做 string 那些事
+
+123function t ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/15/JavaScript%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="JavaScript学习笔记">JavaScript学习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-15T08:04:01.000Z" title="发表于 2023-11-15 16:04:01">2023-11-15</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a></span></div><div class="content">第二章. Javascript它是一种脚本语言，可以用来更改页面内容，控制多媒体，制作图像、动画等等
+例子
+
+修改页面内容
+
+js 代码位置
+123&lt;script&gt;	// js 代码&lt;/script&gt;
+
+引入 js 脚本
+1&lt;script src=&quot;js脚本路径&quot;&gt;&lt;/script&gt;  写在body标签底部
+
+
+注意，到了框架之后，引入方式会有不同
+
+1. 变量与数据类型声明变量1) let :star:能用let不用var
+1let 变量名 = 值;
+
+
+let 声明的变量可以被多次赋值，例如
+
+12let a = 100;  // 初始值是 100a = 200;	  // ok, 被重新赋值为 200
+
+2) const :star:
+const 修饰的叫常量，只能赋值一次，只是引用地址不可改
+
+12const b = 300; // 初始值是 300b = 400;	   // error, 不能再次赋值
+
+
+const 并不意味着它引用的内容不可修改，例如
+
+123const c = [1,2,3];c[2] ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/15/%E7%BD%91%E9%A1%B5%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="前端学习笔记整理">前端学习笔记整理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-15T08:01:36.000Z" title="发表于 2023-11-15 16:01:36">2023-11-15</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="content">HTML 与 CSS1. HTML 元素HTML 由一系列元素 elements 组成，例如
+1&lt;p&gt;Hello, world!&lt;/p&gt;
+
+
+整体称之为元素
+
+&lt;p&gt; 和 &lt;/p&gt; 分别称为起始和结束标签
+
+标签包围起来的 Hello, world 称之为内容
+
+p 是预先定义好的 html 标签，作用是将内容作为一个单独的段落
+
+
+元素还可以有属性，如
+1&lt;p id=&quot;p1&quot;&gt;Hello, world!&lt;/p&gt;
+
+
+属性一般是预先定义好的，这里的 id 属性是给元素一个唯一的标识
+
+元素之间可以嵌套，如
+1&lt;p&gt;HTML 是一门非常&lt;b&gt;强大&lt;/b&gt;的语言&lt;/p&gt;
+
+错误嵌套写法：
+1&lt;p&gt;HTML 是一门非常&lt;b&gt;强大的语言&lt;/p&gt;&lt;/b&gt;
+
+
+
+不包含内容的元素称之为空元素，如
+12&lt;img src=&quot;1.png&quot;&gt;&lt;img src=&quot;1.png& ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法">数据结构与算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-13T05:45:39.000Z" title="发表于 2023-11-13 13:45:39">2023-11-13</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="content">一. 初识算法1.1 什么是算法？定义
+在数学和计算机科学领域，算法是一系列有限的严谨指令，通常用于解决一类特定问题或执行计算
+
+In mathematics and computer science, an algorithm (&#x2F;ˈælɡərɪðəm&#x2F;) is a finite sequence of rigorous instructions, typically used to solve a class of specific problems or to perform a computation.[^1]
+
+Introduction to Algorithm[^2]
+不正式的说，算法就是任何定义优良的计算过程：接收一些值作为输入，在有限的时间内，产生一些值作为输出。
+
+Informally, an algorithm is any well-defined computational procedure that takes some value, or set of values, as input and produces some value,  ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pn</div><div class="author-info__description">不努力，枉年轻！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ChangeTTTO?tab=repositories"><i class="fab fa-github"></i><span>代码仓库</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">写写笔记和日常</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/18/Docker%E7%9A%84%E5%AE%89%E8%A3%85/" title="Docker的安装">Docker的安装</a><time datetime="2024-01-17T21:18:54.000Z" title="发表于 2024-01-18 05:18:54">2024-01-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/18/Docker/" title="无题">无题</a><time datetime="2024-01-17T20:55:49.320Z" title="发表于 2024-01-18 04:55:49">2024-01-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/17/java%E9%9D%A2%E8%AF%95%E9%A2%98/" title="无题">无题</a><time datetime="2024-01-17T09:16:29.213Z" title="发表于 2024-01-17 17:16:29">2024-01-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/17/Ant-Design-pro%E5%88%A0%E9%99%A4%E5%9B%BD%E9%99%85%E5%8C%96%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="Ant-Design-pro删除国际化失败解决方案">Ant-Design-pro删除国际化失败解决方案</a><time datetime="2024-01-17T08:04:01.000Z" title="发表于 2024-01-17 16:04:01">2024-01-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/17/SpringBoot%E7%A6%81%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93/" title="SpringBoot项目禁用数据库">SpringBoot项目禁用数据库</a><time datetime="2024-01-17T06:25:39.000Z" title="发表于 2024-01-17 14:25:39">2024-01-17</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/oneAPI/" style="font-size: 1.1em; color: #999">oneAPI</a> <a href="/tags/kotlin/" style="font-size: 1.1em; color: #999">kotlin</a> <a href="/tags/java/" style="font-size: 1.23em; color: #999ea6">java</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">学习笔记</a> <a href="/tags/JavaScript/" style="font-size: 1.1em; color: #999">JavaScript</a> <a href="/tags/SpringBoot/" style="font-size: 1.1em; color: #999">SpringBoot</a> <a href="/tags/Docker/" style="font-size: 1.1em; color: #999">Docker</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.37em; color: #99a4b2">算法</a> <a href="/tags/React/" style="font-size: 1.1em; color: #999">React</a> <a href="/tags/jvm/" style="font-size: 1.1em; color: #999">jvm</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">设计模式</a> <a href="/tags/Android/" style="font-size: 1.23em; color: #999ea6">Android</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 1.1em; color: #999">随笔</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 1.1em; color: #999">前端开发</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">18</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">36</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-11-07T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-01-17T21:51:49.743Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Pn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer" data-id="1336871887" data-server="netease" data-type="song"  data-fixed="true" data-theme="#3F51B5" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
 
 var pjax = new Pjax({
   elements: 'a:not([target="_blank"])',
