@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>OpenApi项目开发日志 | Rxbby</title><meta name="author" content="Pn,change125800@gmail.com"><meta name="copyright" content="Pn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="如何做到调用自己想要的接口？解决方案  根据id?   前端发送调用请求，发送接口id到网关模块，然后再通过网关远程调用service模块的invoke接口，然后通过此接口远程调用api模块的目的接口。  此方案失效：2024&#x2F;02&#x2F;07  根据接口名称  前端发送需要调用的接口名和方法参数到service模块的invoke接口，该接口直接调用api模块的目标接口 invoke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenApi项目开发日志">
+<meta property="og:url" content="https://changettto.github.io/2024/03/03/OpenApi/index.html">
+<meta property="og:site_name" content="Rxbby">
+<meta property="og:description" content="如何做到调用自己想要的接口？解决方案  根据id?   前端发送调用请求，发送接口id到网关模块，然后再通过网关远程调用service模块的invoke接口，然后通过此接口远程调用api模块的目的接口。  此方案失效：2024&#x2F;02&#x2F;07  根据接口名称  前端发送需要调用的接口名和方法参数到service模块的invoke接口，该接口直接调用api模块的目标接口 invoke">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg">
+<meta property="article:published_time" content="2024-03-03T07:43:39.000Z">
+<meta property="article:modified_time" content="2024-03-03T07:45:21.856Z">
+<meta property="article:author" content="Pn">
+<meta property="article:tag" content="项目日志">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://changettto.github.io/2024/03/03/OpenApi/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OpenApi项目开发日志',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-03 15:45:21'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.pinimg.com/originals/bf/da/38/bfda380e49cf7b40513372ff07985c20.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Rxbby"><span class="site-name">Rxbby</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OpenApi项目开发日志</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-03T07:43:39.000Z" title="发表于 2024-03-03 15:43:39">2024-03-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-03T07:45:21.856Z" title="更新于 2024-03-03 15:45:21">2024-03-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OpenApi项目开发日志"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="如何做到调用自己想要的接口？"><a href="#如何做到调用自己想要的接口？" class="headerlink" title="如何做到调用自己想要的接口？"></a>如何做到调用自己想要的接口？</h1><p>解决方案</p>
+<ul>
+<li>根据id?</li>
+</ul>
+<p> <s><strong>前端发送调用请求，发送接口id到网关模块，然后再通过网关远程调用service模块的invoke接口，然后通过此接口远程调用api模块的目的接口。</strong></s>  此方案失效：2024&#x2F;02&#x2F;07</p>
+<ul>
+<li>根据接口名称</li>
+</ul>
+<p><strong>前端发送需要调用的接口名和方法参数到service模块的invoke接口，该接口直接调用api模块的目标接口</strong></p>
+<h1 id="invoke接口应该怎么去实现，业务逻辑是什么"><a href="#invoke接口应该怎么去实现，业务逻辑是什么" class="headerlink" title="invoke接口应该怎么去实现，业务逻辑是什么"></a>invoke接口应该怎么去实现，业务逻辑是什么</h1><p><strong>业务逻辑</strong></p>
+<ul>
+<li>前端发送需要调用的接口名name</li>
+<li><s>后端接收到接口名后直接通过远程调用去调用这个接口名</s>。<strong>失效:2024&#x2F;02&#x2F;08</strong></li>
+</ul>
+<h2 id="如何动态的拼接我想要的接口名？todo"><a href="#如何动态的拼接我想要的接口名？todo" class="headerlink" title="如何动态的拼接我想要的接口名？todo"></a>如何动态的拼接我想要的接口名？todo</h2><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/Picture/image-20240207114755982.png" alt="image-20240207114755982" style="zoom:80%;" />
+
+<p><strong>1.利用反射调用了对应的方法，但是问题来了，我怎么知道当前的方法是否需要参数？</strong></p>
+<img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/Picture/image-20240207161740468.png" alt="image-20240207161740468" style="zoom:80%;" />
+
+<p><strong>而且我怎么知道它传了什么参数？  或者说应该怎么去封装这个参数，然后将这个参数通过远程调用去调?</strong></p>
+<ul>
+<li><s>我是否可以解析出需要调用的方法的参数名，然后如果传进来的invokeDTO对象里有一个属性匹配上了该参数名称，就将其填充进去然后进行调用？</s>   <strong>方案失败2024&#x2F;02&#x2F;08</strong></li>
+</ul>
+<h2 id="invoke方法2-0成功版本"><a href="#invoke方法2-0成功版本" class="headerlink" title="invoke方法2.0成功版本"></a>invoke方法2.0成功版本</h2><blockquote>
+<p>传入目标接口方法名和方法参数，利用反射和代理模式，如果接收到了参数那就执行有参数的方法，无参就调用无参的方法。	</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/invoke&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Result <span class="title function_">invokeInterface</span><span class="params">(<span class="meta">@RequestBody</span> invokeDTO invokeDTO)</span> &#123;</span><br><span class="line">        Object invoke;</span><br><span class="line">        <span class="type">String</span> <span class="variable">interfaceName</span> <span class="operator">=</span> invokeDTO.getMethodName();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">params</span> <span class="operator">=</span> invokeDTO.getParams();</span><br><span class="line">        <span class="keyword">if</span> (ObjUtil.isEmpty(params))&#123;</span><br><span class="line">             invoke = ReflectUtil.invoke(apiClient, interfaceName);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            invoke = ReflectUtil.invoke(apiClient, interfaceName,params);</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">return</span> Result.success(invoke);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="我真的需要远程调用吗？"><a href="#我真的需要远程调用吗？" class="headerlink" title="我真的需要远程调用吗？"></a>我真的需要远程调用吗？</h1><p>2024&#x2F;02&#x2F;07？  暂时放弃openfeign</p>
+<p>2024&#x2F;02&#x2F;09  需要使用</p>
+<p><strong>把远程调用客户端放在service中方便对实体类的取用</strong></p>
+<p><strong>原因</strong></p>
+<ul>
+<li>网关模块需要使用到Service模块的服务，以获取用户信息</li>
+<li>在前端-service.invoke-api模块的过程中，我需要一个集中的api接口客户端以完美呈现到invoke中，以获得动态的完美调用api的各个接口。否则我就得写死api模块的类，只能在一个类中写接口。</li>
+</ul>
+<p>2024&#x2F;02&#x2F;09是 放弃feign  ：gateway中不能够使用feign。会出现各种问题。</p>
+<p>考虑使用MQ同步调用的方式间接进行远程调用  –<strong>生产者确认机制</strong></p>
+<h1 id="用户接口调用关系表"><a href="#用户接口调用关系表" class="headerlink" title="用户接口调用关系表"></a>用户接口调用关系表</h1><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/Picture/image-20240208172151209.png" alt="image-20240208172151209" style="zoom:80%;" />
+
+<p>这个表什么时候插入数据合适？</p>
+<p>当由用户调用invoke接口时，对表进行新增操作，<strong>前提是根据userID查出来的interfaceInfoId跟前端传过来的interfaceInfoId不一致（避免添加重复数据）。</strong></p>
+<p><strong>我应该有一个获取调用接口，当用户获取免费调用次数时，将为它分配这张表的初始数据。</strong>√</p>
+<blockquote>
+<p>默认分配20次调用次数</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="operator">&lt;</span><span class="keyword">insert</span> id<span class="operator">=</span>&quot;getCount&quot;<span class="operator">&gt;</span></span><br><span class="line">        <span class="keyword">insert</span> <span class="keyword">into</span> memo.user_interface_info (userId,interfaceInfoId,totalNum,leftNum)</span><br><span class="line">        <span class="keyword">values</span> (#&#123;userId&#125;,#&#123;interfaceId&#125;,<span class="number">20</span>,<span class="number">20</span>)</span><br><span class="line">    <span class="operator">&lt;</span><span class="operator">/</span><span class="keyword">insert</span><span class="operator">&gt;</span></span><br><span class="line"><span class="operator">&lt;</span><span class="operator">/</span>mapper<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="签名认证应该怎么做？"><a href="#签名认证应该怎么做？" class="headerlink" title="签名认证应该怎么做？"></a>签名认证应该怎么做？</h1><p>公钥和私钥在什么时候颁发</p>
+<ul>
+<li><strong>注册时颁发</strong></li>
+</ul>
+<p>公钥：用来验证数字签名（用户保存）</p>
+<ul>
+<li>用<strong>公钥来验证签名</strong></li>
+</ul>
+<p>私钥：用于生成数字签名（服务端保存）</p>
+<ul>
+<li><strong>私钥</strong>加要签名的内容<strong>进行签名</strong></li>
+</ul>
+<p>前端发送公钥和Content-Type。</p>
+<p><strong>使用非对称加密RSA算法</strong></p>
+<p><strong>该算法有概率生成同样的密钥。（可能是我的问题）  我傻了，我将rsa工具弄成单例的了，每次生出来的公钥都是一样的。</strong></p>
+<hr>
+<h2 id="在何处签名，在何处解签"><a href="#在何处签名，在何处解签" class="headerlink" title="在何处签名，在何处解签?"></a>在何处签名，在何处解签?</h2><p>在注册时对用户唯一邮箱进行签名。</p>
+<ul>
+<li>签名和公钥返回给前端</li>
+</ul>
+<p>在网关层面利用用户的公钥和服务端颁发的签名和进行解签，如果解签成功，就允许调用。</p>
+<h2 id="签名流程"><a href="#签名流程" class="headerlink" title="签名流程"></a>签名流程</h2><ol>
+<li><strong>服务端流程</strong>：<ul>
+<li>服务端生成一对公钥和私钥，并且严格保密私钥。√</li>
+<li>用户注册时，服务端使用私钥对用户的信息（如用户名、密码等）进行签名，并将签名和公钥返回给用户。√</li>
+</ul>
+</li>
+<li><strong>用户流程</strong>：<ul>
+<li>用户在注册时收到服务端返回的公钥和签名，并将其保存下来。</li>
+<li>用户在调用接口时，请求头携带签名和公钥。<strong>OpenApi-Signature</strong> 和<strong>OpenApi-Public-Key</strong></li>
+</ul>
+</li>
+<li><strong>服务端验证流程</strong>：<ul>
+<li>服务端接收到用户请求时，使用公钥对签名进行验证，以验证签名的真实性和完整性。</li>
+<li>如果签名验证通过，则说明用户身份合法。</li>
+</ul>
+</li>
+</ol>
+<h1 id="循环依赖问题"><a href="#循环依赖问题" class="headerlink" title="循环依赖问题"></a>循环依赖问题</h1><p>┌─────┐<br>|  requestGlobalFilter defined in file [D:\核心项目\OpenApi\gateway\target\classes\com\pn\gateway\RequestGlobalFilter.class]<br>↑     ↓<br>|  com.pn.openfeign.client.serviceClient.serviceClient<br>↑     ↓<br>|  corsGatewayFilterApplicationListener defined in class path resource    [org&#x2F;springframework&#x2F;cloud&#x2F;gateway&#x2F;config&#x2F;GatewayAutoConfiguration.class]<br>↑     ↓<br>|  routePredicateHandlerMapping defined in class path resource [org&#x2F;springframework&#x2F;cloud&#x2F;gateway&#x2F;config&#x2F;GatewayAutoConfiguration.class]<br>↑     ↓<br>|  filteringWebHandler defined in class path resource [org&#x2F;springframework&#x2F;cloud&#x2F;gateway&#x2F;config&#x2F;GatewayAutoConfiguration.class]<br>└─────┘</p>
+<p><strong>解决</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="meta">@Lazy</span></span><br><span class="line"><span class="keyword">private</span>  serviceClient serviceClient;</span><br></pre></td></tr></table></figure>
+
+<p>2024&#x2F;02&#x2F;10假性解决，只是看起来解决了。</p>
+<h1 id="网关层面如何获取登录用户信息"><a href="#网关层面如何获取登录用户信息" class="headerlink" title="网关层面如何获取登录用户信息"></a>网关层面如何获取登录用户信息</h1><p>为什么我不用远程调用，因为feign和gateway有冲突</p>
+<p>遇到了各种依赖问题，烦了。</p>
+<p>比如循环依赖，什么要网关就得舍去web，舍去了web他又要求我要web的无理要求。</p>
+<p><strong>使用RabbitMQ 。 先发送消息给b，b再调用数据库返回用户数据消息，我再接收。</strong></p>
+<h1 id="我如何动态的拼接接口参数？"><a href="#我如何动态的拼接接口参数？" class="headerlink" title="我如何动态的拼接接口参数？"></a>我如何动态的拼接接口参数？</h1><p>比如是是以请求体的方式发送过来时，就以请求体的方式接收。</p>
+<p>以地址栏拼接的方式就以地址栏拼接的方式接收。</p>
+<p>2024&#x2F;02&#x2F;22   卡住了。</p>
+<p><strong>中间加一层来调用目标接口这个功能造成的问题太多了，我真的需要这么做吗？</strong></p>
+<p>使用java反射机制搭配feign实现了一个服务接口调用动态所有目标接口。达到了完全隐藏目标接口地址的效果，并增强了调用安全性。</p>
+<p><strong>失败了，没用搞定动态接口参数问题。</strong>2024&#x2F;02&#x2F;27</p>
+<h1 id="GateWay限流"><a href="#GateWay限流" class="headerlink" title="GateWay限流"></a>GateWay限流</h1><p><strong>根据用户公钥限制单用户的短时间内的超频访问</strong></p>
+<ul>
+<li>使用 <strong>Spring Cloud Gateway</strong> 的 <code>RequestRateLimiter</code> 过滤器工厂基于 <code>Redis</code> 的限流，</li>
+<li>使用 <strong>Sentinel</strong> 结合 <strong>Spring Cloud Gateway</strong> 来实现网关限流。</li>
+</ul>
+<p>目前限流器的实现提供了基于 Redis 的实现，其使用的算法是 <strong>令牌桶算法</strong>。</p>
+<h1 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h1><p><strong>rsa该算法有概率生成同样的密钥。（可能是我的问题）  我傻了，我将rsa工具弄成单例的了，每次生出来的公钥都是一样的。</strong></p>
+<p>事实又是即便我没搞单例，他生出来的公钥都是一样的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">register</span><span class="params">(String email, String password)</span> &#123;</span><br><span class="line">       <span class="type">RSA</span> <span class="variable">rsa</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RSA</span>();</span><br><span class="line">       <span class="comment">//获得私钥</span></span><br><span class="line">       <span class="type">String</span> <span class="variable">privateKey</span> <span class="operator">=</span> rsa.getPrivateKeyBase64();</span><br><span class="line">       <span class="comment">//获得公钥</span></span><br><span class="line">       <span class="type">String</span> <span class="variable">publicKey</span> <span class="operator">=</span> rsa.getPublicKeyBase64();</span><br><span class="line">       <span class="type">Sign</span> <span class="variable">pen</span> <span class="operator">=</span> SignUtil.sign(SignAlgorithm.SHA256withRSA, privateKey, publicKey);</span><br><span class="line">       <span class="comment">//对邮箱名进行签名</span></span><br><span class="line">       <span class="type">byte</span>[] sign = pen.sign(email);</span><br><span class="line">       <span class="comment">//转为base64写入数据库</span></span><br><span class="line">       <span class="type">String</span> <span class="variable">signedBy64</span> <span class="operator">=</span> Base64.getEncoder().encodeToString(sign);</span><br><span class="line">       <span class="comment">//写入数据</span></span><br><span class="line">       userMapper.register(email,password,publicKey,privateKey, signedBy64);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>换为</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>所以注册用户时生成了相同的密钥，在网关处进行校验时检查到了两个人，就报错了。</p>
+<h2 id="大BUG"><a href="#大BUG" class="headerlink" title="大BUG"></a>大BUG</h2><p><strong>当在浏览器切换用户的时候，浏览器本地的公钥确实是换成新用户的了，但是在校验的时候，消费的却还是上一个用户留下的消息</strong></p>
+<p>问题所在:这个队列默认创建出来竟然是持久化的，我懵了，似乎又不是这样。</p>
+<img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/Picture/image-20240302192857285.png" alt="image-20240302192857285" style="zoom:80%;" />
+
+<p>好像是这样，但不知道怎么回事，明明我登录的用户是ccc，但是查出来的却是上一个登录的用户的邮箱</p>
+<p><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/Picture/image-20240302211656967.png" alt="image-20240302211656967"></p>
+<p>会不会是因为key长度太大出问题了？</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://changettto.github.io">Pn</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://changettto.github.io/2024/03/03/OpenApi/">https://changettto.github.io/2024/03/03/OpenApi/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://changettto.github.io" target="_blank">Rxbby</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE%E6%97%A5%E5%BF%97/">项目日志</a></div><div class="post_share"><div class="social-share" data-image="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/03/02/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://rxbby.oss-cn-guangzhou.aliyuncs.com/HuiYuan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pn</div><div class="author-info__description">当我回头看时，还有我走过留下的足迹</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ChangeTTTO?tab=repositories"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">记录、然后成长</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E8%B0%83%E7%94%A8%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81%E7%9A%84%E6%8E%A5%E5%8F%A3%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">如何做到调用自己想要的接口？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#invoke%E6%8E%A5%E5%8F%A3%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8E%BB%E5%AE%9E%E7%8E%B0%EF%BC%8C%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">2.</span> <span class="toc-text">invoke接口应该怎么去实现，业务逻辑是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8A%A8%E6%80%81%E7%9A%84%E6%8B%BC%E6%8E%A5%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%90%8D%EF%BC%9Ftodo"><span class="toc-number">2.1.</span> <span class="toc-text">如何动态的拼接我想要的接口名？todo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#invoke%E6%96%B9%E6%B3%952-0%E6%88%90%E5%8A%9F%E7%89%88%E6%9C%AC"><span class="toc-number">2.2.</span> <span class="toc-text">invoke方法2.0成功版本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%91%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E5%90%97%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">我真的需要远程调用吗？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E8%A1%A8"><span class="toc-number">4.</span> <span class="toc-text">用户接口调用关系表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%BE%E5%90%8D%E8%AE%A4%E8%AF%81%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">签名认证应该怎么做？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E4%BD%95%E5%A4%84%E7%AD%BE%E5%90%8D%EF%BC%8C%E5%9C%A8%E4%BD%95%E5%A4%84%E8%A7%A3%E7%AD%BE"><span class="toc-number">5.1.</span> <span class="toc-text">在何处签名，在何处解签?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%BE%E5%90%8D%E6%B5%81%E7%A8%8B"><span class="toc-number">5.2.</span> <span class="toc-text">签名流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">循环依赖问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%85%B3%E5%B1%82%E9%9D%A2%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-number">7.</span> <span class="toc-text">网关层面如何获取登录用户信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%91%E5%A6%82%E4%BD%95%E5%8A%A8%E6%80%81%E7%9A%84%E6%8B%BC%E6%8E%A5%E6%8E%A5%E5%8F%A3%E5%8F%82%E6%95%B0%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">我如何动态的拼接接口参数？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GateWay%E9%99%90%E6%B5%81"><span class="toc-number">9.</span> <span class="toc-text">GateWay限流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BUG"><span class="toc-number">10.</span> <span class="toc-text">BUG</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7BUG"><span class="toc-number">10.1.</span> <span class="toc-text">大BUG</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/03/OpenApi/" title="OpenApi项目开发日志">OpenApi项目开发日志</a><time datetime="2024-03-03T07:43:39.000Z" title="发表于 2024-03-03 15:43:39">2024-03-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/02/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81/" title="无题">无题</a><time datetime="2024-03-02T07:47:04.845Z" title="发表于 2024-03-02 15:47:04">2024-03-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/21/%E8%81%9A%E5%90%88%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%97%B6%E5%87%BA%E7%8E%B0%E6%89%BE%E4%B8%8D%E5%88%B0%E7%A8%8B%E5%BA%8F%E5%8C%85%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="聚合项目打包时出现程序包找不到解决方案">聚合项目打包时出现程序包找不到解决方案</a><time datetime="2024-02-20T21:43:39.000Z" title="发表于 2024-02-21 05:43:39">2024-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/28/Redis/" title="无题">无题</a><time datetime="2024-01-28T07:48:05.925Z" title="发表于 2024-01-28 15:48:05">2024-01-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/28/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/" title="分布式锁">分布式锁</a><time datetime="2024-01-27T18:14:39.000Z" title="发表于 2024-01-28 02:14:39">2024-01-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Pn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer" data-id="1336871887" data-server="netease" data-type="song"  data-fixed="true" data-theme="#3F51B5" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
